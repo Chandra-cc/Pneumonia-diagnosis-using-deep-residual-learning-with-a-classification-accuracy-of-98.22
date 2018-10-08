@@ -87,4 +87,5 @@ The visualization of the model was performed using the Grad-CAM mapping which cl
 The visualization of a pirticular image helps in the efficacy of the evaluation of the model apart from using standard evaluation metrics. 
 The output of the visualization of one of the images is as follows: 
 ![Original_Image](person20_bacteria_64.jpeg) 
-![Visualized_Image]()
+![Visualized_Image](visual.PNG) 
+-----------------------------------------------------The Proposed Methodology-----------------------------------------------------------
