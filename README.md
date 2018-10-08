@@ -12,5 +12,36 @@ The smapled dataset over which the model was trained contained 3000 images. The 
 # The Model training and the proposed methodology 
 The model is based on deep residual learning which reduces the complexity of the network to a much greater extent rather than normal sequential models. Moreover in case where the model gets too deep, residual learning provides better results incrementing the prediction ability of the model. The use of seperable convolutionalk network instead of simple convolutional network is to reduce the network complexity in terms of trainable parameters, time complexity and space complexity. 
 The total parameters in this proposed methodology is 157,010 out of which 154,866 are trainable parameters. 
-![](Capture1.png)
-
+![](Capture1.PNG) 
+# The Residual block explanation 
+ 
+def residual_block(mod_, f_in, f_out, strides_ = (1,1), use_shortcut_ = False):   
+    shortcut_ = mod_
+    
+    k_ = (4,4)
+    
+    mod_ = SeparableConv2D(f_in, kernel_size=k_, strides=(1,1), padding = "same")(mod_)
+    mod_ = BatchNormalization()(mod_)
+    mod_ = ELU()(mod_)
+    
+    mod_ = SeparableConv2D(f_in, kernel_size=k_, strides=strides_, padding = "same")(mod_)
+    mod_ = BatchNormalization()(mod_)
+    mod_ = ELU()(mod_)
+    
+    mod_ = SeparableConv2D(f_out, kernel_size=k_, strides=(1,1), padding = "same")(mod_)
+    mod_ = BatchNormalization()(mod_)
+    
+    if use_shortcut_ == True or strides_ != (1,1):
+        shortcut_ = SeparableConv2D(f_out, kernel_size=k_, strides=strides_, padding = "same")(shortcut_)
+        shortcut_ = BatchNormalization()(shortcut_)
+        
+    mod_ = Add()([shortcut_, mod_])
+    mod_ = ReLU()(mod_)
+    
+    return mod_
+ The above code is for Generating the Residual block containing 3 Separable convolutional blocks ouyt of which 2 have activation functions and the last layer is devoid of activation function which aids in reducing the complexity of the model further. 
+ # The Evaluation of the model 
+The Testing accuracy of the model is 98.2% evaluated on 15% of the sample data used for development of the model. 
+The AUROC score is astoninshing which is 99.515 alon with the precision and recall to be 0.9965 and 0.9766 rrespectively. 
+The Precision vs Recall curve is as follows: 
+![PR curve]()
