@@ -81,4 +81,9 @@ plt.title('model loss')
 plt.ylabel('loss')  
 plt.xlabel('epoch')  
 plt.legend(['train', 'test'], loc='upper left')  
-plt.show()  
+plt.show()   
+# The visualization of the model 
+The visualization of the model was performed using the Grad-CAM mapping which clearly illustrated the affected lesion area of the CXR images. 
+The visualization of a pirticular image helps in the efficacy of the evaluation of the model apart from using standard evaluation metrics. 
+The output of the visualization of one of the images is as follows: 
+![Visualization]()
