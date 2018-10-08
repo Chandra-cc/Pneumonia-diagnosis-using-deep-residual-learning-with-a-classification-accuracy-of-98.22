@@ -45,40 +45,40 @@ The Testing accuracy of the model is 98.2% evaluated on 15% of the sample data u
 The AUROC score is astoninshing which is 99.515 alon with the precision and recall to be 0.9965 and 0.9766 rrespectively. 
 The Precision vs Recall curve is as follows:  
 ![PR curve](pr.PNG)  
-The following curve was generated using the following block of code:  
-y_test_labels = np.argmax(y_test, axis = 1) 
-y_test_pred_incep = np.argmax(model_f.predict(X_test),axis = 1) 
-print(precision_score(y_test_labels, y_test_pred_incep)) 
-print(recall_score(y_test_labels, y_test_pred_incep))  
-y_pred_probs = model_f.predict([X_test]) 
-fpr, tpr, thresholds = roc_curve(y_test_labels, y_pred_probs[:, 1]) 
-def plot_roc_curve(fpr, tpr, label = None): 
-    plt.plot(fpr, tpr, linewidth=2, label = label) 
-    plt.plot([0, 1], [0, 1], "k--") 
-    plt.axis([0, 1, 0, 1]) 
-    plt.xlabel("False Positive Rate") 
-    plt.xlabel("True Positive Rate") 
+The following curve was generated using the following block of code:   
+y_test_labels = np.argmax(y_test, axis = 1)  
+y_test_pred_incep = np.argmax(model_f.predict(X_test),axis = 1)  
+print(precision_score(y_test_labels, y_test_pred_incep))  
+print(recall_score(y_test_labels, y_test_pred_incep))   
+y_pred_probs = model_f.predict([X_test])  
+fpr, tpr, thresholds = roc_curve(y_test_labels, y_pred_probs[:, 1])  
+def plot_roc_curve(fpr, tpr, label = None):  
+    plt.plot(fpr, tpr, linewidth=2, label = label)  
+    plt.plot([0, 1], [0, 1], "k--")  
+    plt.axis([0, 1, 0, 1])  
+    plt.xlabel("False Positive Rate")  
+    plt.xlabel("True Positive Rate")  
  
-plot_roc_curve(fpr, tpr) 
-plt.show() 
-roc_auc_score(y_test_labels,y_pred_probs[:,1]) 
-The Training Curves including the accuracy curve and the loss curve are as follows: 
-![Accuracy](accuracy.PNG) 
-![Loss](loss.PNG) 
-The following curves were generated using the following block of code: 
-Training 
-plt.plot(history['acc']) 
-plt.plot(history['val_acc']) 
-plt.title('Model accuracy') 
-plt.ylabel('accuracy') 
-plt.xlabel('epoch') 
-plt.legend(['train', 'test'], loc='upper left') 
-plt.show() 
-Loss 
-plt.plot(history['loss']) 
-plt.plot(history['val_loss']) 
-plt.title('model loss') 
-plt.ylabel('loss') 
-plt.xlabel('epoch') 
-plt.legend(['train', 'test'], loc='upper left') 
-plt.show() 
+plot_roc_curve(fpr, tpr)  
+plt.show()  
+roc_auc_score(y_test_labels,y_pred_probs[:,1])  
+The Training Curves including the accuracy curve and the loss curve are as follows:  
+![Accuracy](accuracy.PNG)  
+![Loss](loss.PNG)  
+The following curves were generated using the following block of code:  
+Training  
+plt.plot(history['acc'])  
+plt.plot(history['val_acc'])  
+plt.title('Model accuracy')  
+plt.ylabel('accuracy')  
+plt.xlabel('epoch')  
+plt.legend(['train', 'test'], loc='upper left')  
+plt.show()  
+Loss  
+plt.plot(history['loss'])  
+plt.plot(history['val_loss'])  
+plt.title('model loss')  
+plt.ylabel('loss')  
+plt.xlabel('epoch')  
+plt.legend(['train', 'test'], loc='upper left')  
+plt.show()  
