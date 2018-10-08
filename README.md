@@ -12,5 +12,5 @@ The smapled dataset over which the model was trained contained 3000 images. The 
 # The Model training and the proposed methodology 
 The model is based on deep residual learning which reduces the complexity of the network to a much greater extent rather than normal sequential models. Moreover in case where the model gets too deep, residual learning provides better results incrementing the prediction ability of the model. The use of seperable convolutionalk network instead of simple convolutional network is to reduce the network complexity in terms of trainable parameters, time complexity and space complexity. 
 The total parameters in this proposed methodology is 157,010 out of which 154,866 are trainable parameters. 
-![Complexity]()
+![](Capture1.png)
 
