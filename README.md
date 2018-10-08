@@ -86,4 +86,5 @@ plt.show()
 The visualization of the model was performed using the Grad-CAM mapping which clearly illustrated the affected lesion area of the CXR images. 
 The visualization of a pirticular image helps in the efficacy of the evaluation of the model apart from using standard evaluation metrics. 
 The output of the visualization of one of the images is as follows: 
-![Visualization]()
+![Original_Image](person20_bacteria_64.jpeg) 
+![Visualized_Image]()
