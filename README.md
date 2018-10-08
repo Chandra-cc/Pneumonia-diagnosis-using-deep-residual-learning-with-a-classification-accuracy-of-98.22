@@ -8,4 +8,9 @@ This model was developed on a sample of 3000 images from the mendeley dataset wh
 This proposed methodology gave an astonishing accuracy of 98.22 % along with an AUROC score of 99.515 resulting in it being one of the most efficient systems for diagnosis of pneumonia. 
 # The Preprocessing 
 The smapled dataset over which the model was trained contained 3000 images. The data or the images were read in BGR format allowing the learning of the model to be performed to 3 channels. Efficient edge preservation and enhancement techniques were applied including contrast adaptive histogram equalization(CLAHE) and bilateral filtering for precise preservation of the affected lesion in the CXR images. 
+![Preprocessing](Capture.PNG) 
+# The Model training and the proposed methodology 
+The model is based on deep residual learning which reduces the complexity of the network to a much greater extent rather than normal sequential models. Moreover in case where the model gets too deep, residual learning provides better results incrementing the prediction ability of the model. The use of seperable convolutionalk network instead of simple convolutional network is to reduce the network complexity in terms of trainable parameters, time complexity and space complexity. 
+The total parameters in this proposed methodology is 157,010 out of which 154,866 are trainable parameters. 
+![Complexity]()
 
