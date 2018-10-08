@@ -1,0 +1,1 @@
+res4_4x4_bf_BGR_shu_clahe_red_data-98.2
